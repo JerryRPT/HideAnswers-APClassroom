@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AP Hide</title>
+    <style>
+        :root {
+            --bg-color: #121212;
+            --surface-color: #1e1e1e;
+            --primary-accent: #6b21a8; /* Deep purple */
+            --primary-accent-hover: #9333ea;
+            --text-main: #f3f4f6;
+            --text-muted: #9ca3af;
+            --success: #10b981;
+            --danger: #ef4444;
+            --border-radius: 12px;
+        }
+
+        body {
+            width: 260px;
+            margin: 0;
+            padding: 20px;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            box-sizing: border-box;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 24px;
+        }
+
+        .header h3 {
+            margin: 0;
+            font-size: 18px;
+            font-weight: 700;
+            background: linear-gradient(90deg, #c084fc, #818cf8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -0.5px;
+        }
+
+        .header p {
+            margin: 4px 0 0;
+            font-size: 12px;
+            color: var(--text-muted);
+        }
+
+        .card {
+            background-color: var(--surface-color);
+            border-radius: var(--border-radius);
+            padding: 16px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(255,255,255,0.05);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .toggle-labels {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .toggle-title {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 2px;
+        }
+
+        .toggle-status {
+            font-size: 11px;
+            color: var(--success);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        /* iOS style toggle switch */
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 56px;
+            height: 30px;
+        }
+
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(255, 255, 255, 0.1);
+            transition: .4s;
+            border-radius: 34px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 24px;
+            width: 24px;
+            left: 2px;
+            bottom: 2px;
+            background-color: var(--text-main);
+            transition: .4s;
+            border-radius: 50%;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+        }
+
+        input:checked + .slider {
+            background-color: var(--primary-accent);
+            border-color: var(--primary-accent);
+        }
+
+        input:focus + .slider {
+            box-shadow: 0 0 1px var(--primary-accent);
+        }
+
+        input:checked + .slider:before {
+            transform: translateX(26px);
+        }
+
+        input:disabled + .slider {
+            background-color: rgba(255, 255, 255, 0.05);
+            cursor: not-allowed;
+            border-color: transparent;
+        }
+        
+        input:disabled + .slider:before {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .error-state {
+            margin-top: 12px;
+            font-size: 11px;
+            color: var(--danger);
+            text-align: center;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h3>AP Hide</h3>
+        <p>Answer Visibility Manager</p>
+    </div>
+
+    <div class="card">
+        <div class="toggle-labels">
+            <span class="toggle-title">Hide Answers</span>
+            <span class="toggle-status" id="statusLabel">Loading...</span>
+        </div>
+        <label class="switch">
+            <input type="checkbox" id="toggleSwitch" disabled>
+            <span class="slider"></span>
+        </label>
+    </div>
+
+    <div id="errorMsg" class="error-state">
+        Please navigate to AP Classroom.
+    </div>
+
+    <script src="popup.js"></script>
+</body>
+</html>
