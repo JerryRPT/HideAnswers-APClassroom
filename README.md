@@ -20,7 +20,7 @@ A simple browser extension that hides answers, correct/incorrect indicators, and
 
 ### Firefox
 1. Download from this link https://addons.mozilla.org/en-US/firefox/addon/ap-classroom-answer-hider/
-or
+### If you would rather build it yourself
 1. Clone or download this repository.
 2. Open Firefox and go to `about:debugging#/runtime/this-firefox`.
 3. Click **Load Temporary Add-on...**
