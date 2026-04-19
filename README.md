@@ -2,10 +2,11 @@
 
 A simple browser extension that hides answers, correct/incorrect indicators, and distractor elements on AP Classroom.
 
+
+
 ## Features
 
 - Hides answers and performance metrics to prevent spoilers while studying.
-- Removes `--correct`, `--incorrect`, and `--chosen` marker classes.
 - Removes OneTrust cookie consent banners automatically.
 - Provides a simple popup toggle to show/hide answers at any time.
 
@@ -18,6 +19,8 @@ A simple browser extension that hides answers, correct/incorrect indicators, and
 4. Click **Load unpacked** and select the downloaded directory.
 
 ### Firefox
+1. Download from this link https://addons.mozilla.org/en-US/firefox/addon/ap-classroom-answer-hider/
+or
 1. Clone or download this repository.
 2. Open Firefox and go to `about:debugging#/runtime/this-firefox`.
 3. Click **Load Temporary Add-on...**
